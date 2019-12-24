@@ -9,7 +9,8 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-
+    Button btn2 ;
+    Button btn1 ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,7 +20,8 @@ public class MainActivity extends AppCompatActivity {
 
     }
     private void Next(){
-        Button btn1 = (Button) findViewById(R.id.button2);
+        btn1 =  findViewById(R.id.button2);
+
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -30,12 +32,11 @@ public class MainActivity extends AppCompatActivity {
                 String str = getString(R.string.text)+chislo;
                 TextView textView = findViewById(R.id.textView);
                 textView.setText(str);
-
             }
         });
     }
     private void Down(){
-        Button btn2 = (Button) findViewById(R.id.button1);
+        btn2 =  findViewById(R.id.button1);
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
