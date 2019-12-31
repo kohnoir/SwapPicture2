@@ -15,27 +15,26 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Next();
-        Down();
+        int diapozon = (int) (Math.random()*100)+1;
+        String chislo = String.valueOf(diapozon);
+        String str = getString(R.string.text)+chislo;
+        TextView textView = findViewById(R.id.textView);
+        textView.setText(str);
+        initNext();
+        initDown();
 
     }
-    private void Next(){
+    private void initNext(){
         btn1 =  findViewById(R.id.button2);
-
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, MainActivity.class);
                 startActivity(intent);
-                int diapozon = (int) (Math.random()*100)+1;
-                String chislo = String.valueOf(diapozon);
-                String str = getString(R.string.text)+chislo;
-                TextView textView = findViewById(R.id.textView);
-                textView.setText(str);
             }
         });
     }
-    private void Down(){
+    private void  initDown(){
         btn2 =  findViewById(R.id.button1);
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
